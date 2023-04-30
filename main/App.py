@@ -1,22 +1,15 @@
-import kivy
-from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
+from kivymd.app import MDApp
+from kivymd.uix.label import MDLabel, MDIcon
+from kivy.lang import Builder
+from kivymd.uix.button import MDIconButton
+from kivy.uix import widget
 
-class ChildApp(GridLayout):
-    def __init__(self,**kwargs):
-        super(ChildApp, self).__init__()
-        self.cols = 2
-        self.add_widget(Label(text="Test1"))
-        self.s_name = TextInput()
-        
-
-
-class parentApp(App):
+class AESDiary(MDApp):
     def build(self):
-        return ChildApp()
+        self.theme_cls.material_style = "M3"
+        self.theme_cls.theme_style = "Dark"
+        test = Builder.load_file("main.kv")
+        return test
 
 
-parentApp().run()
+AESDiary().run()
