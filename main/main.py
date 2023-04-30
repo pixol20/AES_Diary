@@ -6,10 +6,11 @@ from kivy.uix import widget
 
 class AESDiary(MDApp):
     def build(self):
-        self.theme_cls.material_style = "M3"
         self.theme_cls.theme_style = "Dark"
         test = Builder.load_file("main.kv")
         return test
+    def callback(self):
+        print("memes")
 
 
 AESDiary().run()
